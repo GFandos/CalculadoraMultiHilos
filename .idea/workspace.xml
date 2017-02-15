@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7a82c1f-4562-4404-896e-9a24d52f9624" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HiloPeticion.java" afterPath="$PROJECT_DIR$/src/HiloPeticion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log" afterPath="$PROJECT_DIR$/log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SocketCliente.java" afterPath="$PROJECT_DIR$/src/SocketCliente.java" />
     </list>
     <ignored path="CalculadoraMultiHilos.iws" />
@@ -45,8 +45,8 @@
       <file leaf-file-name="SocketCliente.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SocketCliente.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="79" column="138" selection-start-line="79" selection-start-column="138" selection-end-line="79" selection-end-column="138" />
+            <state relative-caret-position="133">
+              <caret line="143" column="55" selection-start-line="143" selection-start-column="55" selection-end-line="143" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -640,12 +640,12 @@
       <option name="presentableId" value="Default" />
       <updated>1486571005910</updated>
       <workItem from="1486571008574" duration="1750000" />
-      <workItem from="1487171690859" duration="3814000" />
+      <workItem from="1487171690859" duration="6387000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5564000" />
+    <option name="totallyTimeSpent" value="8137000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="31" width="1914" height="1000" extended-state="0" />
@@ -754,8 +754,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SocketCliente.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="79" column="138" selection-start-line="79" selection-start-column="138" selection-end-line="79" selection-end-column="138" />
+        <state relative-caret-position="133">
+          <caret line="143" column="55" selection-start-line="143" selection-start-column="55" selection-end-line="143" selection-end-column="55" />
           <folding />
         </state>
       </provider>
