@@ -19,14 +19,15 @@
  * de recursos que puede ser solicitados.
  */
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.util.Date;
 import java.util.Scanner;
 
 public class SocketCliente {
+
+    private static String ip = "0.0.0.0";
 
     public static void main(String[] args) {
 
@@ -36,7 +37,7 @@ public class SocketCliente {
 
         Scanner sc = new Scanner(System.in);
 
-        InetSocketAddress addr = new InetSocketAddress("0.0.0.0", 5555);
+        InetSocketAddress addr = new InetSocketAddress(ip, 5555);
 
         System.out.println("Introduce el primer número: ");
         int x = sc.nextInt();
@@ -58,7 +59,7 @@ public class SocketCliente {
 
             System.out.println("Enviando mensaje");
 
-            String mensaje =x+operator+y;
+            String mensaje =x+ " " + operator + " " +y + " ";
 
             /*Ponemos el mensaje en el canal
             * RECORDAR que hay que ponerlo en bits*/
@@ -70,7 +71,15 @@ public class SocketCliente {
             byte[] result = new byte[25];
 
             is.read(result);
-            System.out.println(new String(result));
+
+            String resultString = new String(result).split(" ")[0];
+            System.out.println(resultString);
+
+            Date date = new Date();
+
+            String toLog = "Petición de: " + ip + ". A fecha: " + date.toString() + ". Operación: " + mensaje + " = " + resultString + "\n";
+
+            writeLog(toLog);
 
             clienteSocket.close();
 
@@ -78,6 +87,22 @@ public class SocketCliente {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+    }
+
+    public static void writeLog(String result) throws IOException {
+
+        File f = new File ("log");
+
+        if(!f.exists()) {
+            f.createNewFile();
+        }
+
+        BufferedWriter writer = new BufferedWriter(new FileWriter(f, true));
+
+        writer.append(result);
+        writer.newLine();
+        writer.close();
 
     }
 }

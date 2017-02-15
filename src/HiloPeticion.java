@@ -4,8 +4,9 @@ import java.io.OutputStream;
 import java.net.Socket;
 
 /**
- * Created by dremon on 10/02/16.
+ * Created by 4798978s on 10/02/16.
  */
+
 public class HiloPeticion extends Thread{
 
     Socket socketescuchado;
@@ -25,14 +26,19 @@ public class HiloPeticion extends Thread{
             is.read(mensaje);
 
             String s = new String(mensaje);
-            char[] operacion = s.toCharArray();
+            String[] operationArray = s.split(" ");
+
+            for(int i = 0; i < 3; ++i) {
+                System.out.print(operationArray[i]);
+            }
+
 
             System.out.println(mensaje);
 
-            int x = Integer.valueOf(String.valueOf(operacion[0]));
-            int y = Integer.valueOf(String.valueOf(operacion[2]));
+            int x = Integer.valueOf(operationArray[0]);
+            int y = Integer.valueOf(operationArray[2]);
 
-            char operator = operacion[1];
+            char operator = operationArray[1].toCharArray()[0];
 
             System.out.println(x + " " + operator + " " + y);
 
@@ -52,6 +58,9 @@ public class HiloPeticion extends Thread{
                 case '*':
                     resultat = multiply(x,y);
                     break;
+                case '%':
+                    resultat = mod(x,y);
+                    break;
                 default:
                     System.out.println("Operador no soportado");
 
@@ -62,7 +71,7 @@ public class HiloPeticion extends Thread{
 
 
 
-            os.write(String.valueOf(resultat).getBytes());
+            os.write(String.valueOf(resultat + " ").getBytes());
             socketescuchado.close();
             is.close();
             os.close();
@@ -91,5 +100,9 @@ public class HiloPeticion extends Thread{
 
     private int suma(int x, int y) {
         return x+y;
+    }
+
+    private int mod(int x, int y) {
+        return x%y;
     }
 }
